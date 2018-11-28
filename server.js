@@ -34,6 +34,9 @@ app.use((req, res, next) =>{
     next()
 })
 
+app.use(express.static(__dirname + '/views'));
+
+
 app.get('/', (req, res) => {
 
     res.render('home.hbs')
