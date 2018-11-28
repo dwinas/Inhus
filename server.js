@@ -1,24 +1,24 @@
 
 const hbs = require('hbs')
-
-const request = require('request')
-
 const fs = require('fs')
-
 const express = require('express')
 
 //nusakome naudojamo porto numeri
 
 const port = process.env.port || 4000
 
+const app = express()
+
 hbs.registerPartials(__dirname + '/views/partials')
+
+app.set('view engine', 'hbs');
 
 hbs.registerHelper('time', () =>{
 
     return new Date().getDate
 })
 
-const app = express()
+
 
 //app.use(express.static(__dirname + '/html'));
 
